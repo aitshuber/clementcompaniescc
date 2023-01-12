@@ -125,11 +125,8 @@
             <p class="js-form-success">We will get back to you shortly.</p>
             <!-- END - Form Success Message -->
 
-            <form name="catwebformform21676" method="post"
-                  enctype="multipart/form-data"
-                  id="contact-form">
-                <input type="hidden" name="csrfmiddlewaretoken" value="oQZkXrv6GEQWjJTbPi0RbvoQHKswTucerjZCNOsOd6s3Vknd2CazB3JJv3zfWQmT">
-
+            <form method="post" id="contact-us" action="/success">
+               
                 <table border="0" cellpadding="2" cellspacing="0" class="webform">
                     <div class="row">
                         <div class="medium-6 columns">
@@ -150,60 +147,21 @@
                     </div>
                     <div class="row">
                         <div class="medium-12 columns">
-                            <textarea name="comment" cols="40" rows="10" name="CAT_Custom_869  " id="CAT_Custom_869" placeholder="Message" class="cat_listbox" maxlength="500" required>
-</textarea>
+                            <textarea name="comment" cols="40" rows="10" name="CAT_Custom_869  " id="CAT_Custom_869" placeholder="Message" class="cat_listbox" maxlength="500" required></textarea>
                         </div>
-
                     </div>
                     <div class="row">
                         <div class="medium-8 columns">
-                            <input class="cat_button g-recaptcha"
-                                   data-sitekey="6LdB66kaAAAAAF03p5ye536xbSdWfyLtmzH_DuOB"
-                                   type="submit" value="Submit"
-                                   data-callback="submitContactForm"
-                                   id="form-button"
-                            >
+                            <input type="hidden" name="inbox_key" value="clement-comp">
+                              <input type="hidden" name="_to" value="carlos@accoladesit.com">
+                              <input type="hidden" name="_cc" value="carlos@accoladesit.com">
+                              <input type="text" name="_gotcha" style="display: none;">
+                              <input class="cat_button g-recaptcha" type="submit" value="Submit">
                         </div>
                     </div>
                 </table>
             </form>
-            <script>
-                function submitContactForm(event) {
-                    var form = new FormData(document.getElementById('contact-form'));
-                    $.ajax({
-                        headers: {'X-CSRFTOken': 'oQZkXrv6GEQWjJTbPi0RbvoQHKswTucerjZCNOsOd6s3Vknd2CazB3JJv3zfWQmT'},
-                        enctype: 'multipart/form-data',
-                        url: '/contact',
-                        contentType: false,
-                        processData: false,
-                        type: 'POST',
-                        data: form,
-                        success: function (result) {
-                            if (result.status === 200) {
-                                Swal.fire("Form Submitted!", "Your message has been sent to us", "success")
-                            } else {
-                                let errors = ""
-                                for (var i = 0; i < result.errors.length; i++) {
-                                    errors += `<li>${result.errors[i]}</li>`;
-                                }
-                                Swal.fire({
-                                    "icon": "warning",
-                                    "title": "Invalid Form",
-                                    "html": `These fields are either invalid or blank: <ul>${errors}<ul>`
-                                });
-                            }
-                        }
-                        ,
-                        error: function (err) {
-                            Swal.fire({
-                                icon: "error",
-                                title: "Form Submission Failure",
-                                html: "Something went wrong, please try again later"
-                            })
-                        }
-                    })
-                }
-            </script>
+          
             <hr/>
             <div class="address-details">
                 <div class="row">
