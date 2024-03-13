@@ -2,8 +2,6 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-
-<!-- BC_OBNW -->
 <head>
 	{% capture seo %}
 	 {% seo %}
@@ -27,19 +25,13 @@
 		</script>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
-		<!--[if lt IE 9]>
-		<script src="cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
-		<script src="s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
-		<script src="html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
-		<script src="cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
-		<![endif]-->
+		
 		<meta name="description"
 			  content="Project management and visual inspection company. Offering expertise in the construction of oilfield production equipment, pipelines and onshore/offshore installations.  We have the ability to provide management, supervision and inspection."/>
 		<meta name="keywords"
 			  content="Project Managment, Inspection Services, Oil Field, Clement Comany, Clement Companies, C-Spect,C Spect,C-Saddle, C Saddle,">
 		<meta name="author" content="Clement Companies">
-		<script type="text/javascript"
-				src="https://clementcompanies.com/static/CatalystScripts/Java_Box%25EF%25B9%2596vs%3Db98.58fac55d-phase1.js"></script>
+		
 	</head>
 	<body>
 	
@@ -105,44 +97,6 @@
 		</div>
 	</div>
 </footer>
-<script src="https://www.google.com/recaptcha/api.js?render=6Lc3p_EjAAAAAN6S55h6uEnInFrFLx11fmyYMu3y"></script>
-<script>
-  var submitted = false;
-  var tokenCreated = false;
-  var formEl = document.getElementById('contact-us');
-
-  formEl.addEventListener("submit", function (event) {
-
-	// Check if the recaptcha exists
-	if (!tokenCreated) {
-
-	  // Prevent submission
-	  event.preventDefault();
-
-	  // Prevent more than one submission
-	  if (!submitted) {
-		submitted = true;
-		// needs for recaptacha ready
-		grecaptcha.ready(function() {
-		  // do request for recaptcha token
-		  // response is promise with passed token
-		  grecaptcha.execute('6Lc3p_EjAAAAAN6S55h6uEnInFrFLx11fmyYMu3y', {action: 'create_comment'}).then(function (token) {
-			// add token to form
-			var input = document.createElement("input");
-			input.type = "hidden";
-			input.name = "g-recaptcha-response";
-			input.value = token;
-			formEl.appendChild(input);
-
-			// resubmit the form
-			tokenCreated = true;
-			formEl.submit();
-		  });
-		});
-	  }
-	}
-  });
-</script>
 <script src="/assets/js/jquery-1.11.1.min.js"></script>
 <script src="/assets/js/foundation.min.js"></script>
 <script>
