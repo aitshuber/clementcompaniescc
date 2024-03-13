@@ -105,8 +105,11 @@
                 <div id="myModal2" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true"
                      role="dialog">
                     <h2 id="modalTitle">C-SADDLE Info Packet</h2>
-                    <iframe src="/Installation-Video-for-Pipe-Support-C-Saddle-Pipe-Shoes.mp4"
-                            width="500" height="500" class="iframe"></iframe>
+                    <video width="640" height="480" controls preload="none">
+                       <source src="/Installation-Video-for-Pipe-Support-C-Saddle-Pipe-Shoes.mp4" id="myVideoPlayer" type="video/mp4">
+                       Your browser does not support the video tag.
+                    </video>
+                   
                     <a class="close-reveal-modal" aria-label="Close">&times;</a>
                 </div>
                 <hr>
@@ -148,6 +151,13 @@
 </section>
 
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+$('.close-reveal-modal').click(function(){
+  $('video').each(function(){
+    $(this).get(0).pause();
+  })
+});
+</script>
 <script type="text/javascript">
     function passcodecheck() {
 
