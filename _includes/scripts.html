@@ -6,3 +6,12 @@
 <script src="/assets/js/slick.min.js"></script>
 <script src="/assets/js/slick.js"></script>
 <script src="/assets/js/scripts.js"></script>
+ <script src="https://www.google.com/recaptcha/api.js?render={{site.recaptcha_key}}"></script>
+<script>
+    grecaptcha.ready(function () {
+        grecaptcha.execute('{{site.recaptcha_key}}', {action: 'submit'}).then(function (token) {
+            console.info("got token: " + token);
+            document.getElementById('g-recaptcha-response').value = token;
+        });
+    });
+</script>
