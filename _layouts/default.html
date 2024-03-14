@@ -1,41 +1,17 @@
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
+<meta charset="utf-8" />
 
 <head>
-	{% capture seo %}
-	 {% seo %}
-	 <meta name="keywords" content="{{page.keywords}}">
-	 <meta name="msvalidate.01" content="84731997131DC6D5C4CE682AF20C5C74" />
-	 {% endcapture %}
-	 {{seo | remove: "Jekyll"}}
-	
-		<script type="text/javascript">var jslang = 'EN';</script>
-		<link rel="shortcut icon" href="static/favicon.png"/>
-		<link rel="apple-touch-icon" href="static/home_badge_64.png"/>
-		<link rel="stylesheet" href="/assets/css/normalize.css"/>
-		<link rel="stylesheet" href="/assets/css/foundation.min.css"/>
-		<link rel="stylesheet" type="text/css" href="/assets/css/slick.css"/>
-		<link rel="stylesheet" href="/assets/css/styles.css"/>
-		<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,300,700"/>
-		<script src="/assets/js/vendor/modernizr.js"></script>
-		<script type="text/javascript">
-			// Will retun 1 or 0 based on if user is logged in(1) or not logged in(0)
-			var _isLoggedIn = !!parseInt("0");
-		</script>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
-		
-		<meta name="description"
-			  content="Project management and visual inspection company. Offering expertise in the construction of oilfield production equipment, pipelines and onshore/offshore installations.  We have the ability to provide management, supervision and inspection."/>
-		<meta name="keywords"
-			  content="Project Managment, Inspection Services, Oil Field, Clement Comany, Clement Companies, C-Spect,C Spect,C-Saddle, C Saddle,">
-		<meta name="author" content="Clement Companies">
-		
-	</head>
-	<body>
-	
-	
+{% capture seo %}
+{% seo %}
+<meta name="keywords" content="{{page.keywords}}">
+<meta name="msvalidate.01" content="84731997131DC6D5C4CE682AF20C5C74" />
+{% endcapture %}
+{{seo | remove: "Jekyll"}}
+{% include head.html %}
+</head>
+<body>
 	<header>
 		<section class="utility-nav">
 			<div class="row">
@@ -49,8 +25,7 @@
 			<!-- main nav -->
 			<nav data-topbar="data-topbar" class="top-bar">
 				<ul class="title-area">
-					<li class="name"><a title="Clement" class="logo" href="/index.html"><img alt=""
-																					  src="/assets/img/logo@2x.png"/></a>
+					<li class="name"><a title="Clement" class="logo" href="/"><img alt="{{site.name}} Logo" src="/assets/img/logo@2x.png" /></a>
 					</li>
 					<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 					<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
@@ -79,31 +54,9 @@
 			</nav>
 		</div>
 	</header>
-{{ content }}
+	{{ content }}
+	{% include footer.html %}
+	{% include scripts.html %}
+</body>
 
-<footer>
-	<div class="row">
-		<div class="medium-12 columns"><img alt="" style="max-width: 245px; margin-bottom: 30px;"
-											src="/assets/img/logo-white.png"/>
-
-		</div>
-		<div class="medium-12 columns">
-			<div class="copy">
-				<p class="">&#169; The Clement Companies, Inc.2023. All Rights Reserved. Site designed and powered by
-					<a href="http://accoladesit.com" target="_blank"
-					   title="Accolades - Website Design Lafayette Louisiana">Accolades IT</a></p>
-
-			</div>
-		</div>
-	</div>
-</footer>
-<script src="/assets/js/jquery-1.11.1.min.js"></script>
-<script src="/assets/js/foundation.min.js"></script>
-<script>
-	$(document).foundation();
-</script>
-<script src="/assets/js/slick.min.js"></script>
-<script src="/assets/js/slick.js"></script>
-<script src="/assets/js/scripts.js"></script>
-	</body>
 </html>
